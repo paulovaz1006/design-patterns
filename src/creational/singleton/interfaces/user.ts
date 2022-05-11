@@ -1,4 +1,6 @@
-export interface User {
+interface User {
   name: string;
-  age: number;
+  age: number
 }
+
+export { User }

@@ -1,6 +1,7 @@
 function Person(firstName, lastName, age) {
   this.firstName = firstName;
   this.lastName = lastName;
+  this.name = name;
   this.age = age;
 }
 

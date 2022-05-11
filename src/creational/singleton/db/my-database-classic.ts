@@ -1,29 +1,30 @@
-import { User } from "../interfaces/user";
 
-export class MyDatabaseClassic {
-  private static _instance?: MyDatabaseClassic;
-  private users: User[] = [];
+
+export class MyDataBaseClassic {
+  private static instance: MyDataBaseClassic | null = null;
+  private users: User[] = []; 
 
   private constructor() {}
-  public static get instance(): MyDatabaseClassic {
-    if (MyDatabaseClassic._instance == null) {
-      MyDatabaseClassic._instance = new MyDatabaseClassic();
+
+  static getInstance(): MyDataBaseClassic {
+    if (MyDataBaseClassic.instance === null) {
+      MyDataBaseClassic.instance = new MyDataBaseClassic();
     }
 
-    return MyDatabaseClassic._instance;
+    return MyDataBaseClassic.instance;
   }
 
-  add(user: User): void {
+  add (user: User):void {
     this.users.push(user);
   }
 
-  remove(index: number): void {
+  remove(index: number):void {
     this.users.splice(index, 1);
   }
 
   show(): void {
     for (const user of this.users) {
-      console.log(user);
+      console.log(user)
     }
   }
 }
