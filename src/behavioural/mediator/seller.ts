@@ -34,4 +34,14 @@ export class Seller {
 
     return product[0];
   }
+
+  viewProducts(): void {
+    if (!this.mediator) return;
+    this.mediator.showProducts();
+  }
+
+  buy(id: string): void {
+    if (!this.mediator) return;
+    this.mediator.buy(id);
+  }
 }
